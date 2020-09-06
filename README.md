@@ -12,6 +12,64 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+#テーブル設計
+
+## users テーブル
+
+| Column | Type    | Options     |
+| ------ | ------- | ----------- |
+| id     | integer | primary key |
+| name   | string  | null: false |
+| email  | string  | primary key |
+
+### Association
+
+- has_many :items
+- has_many :comments
+- has_many :purchases
+
+## items テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| id         | integer    | primary key                    |
+| user_id    | references | null: false, foreign_key: true |
+| title      | string     | null: false                    |
+| image      | text       |                                |
+|explanation | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- has_many :comments
+- has_one :purchas
+
+## comments テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| id         | integer    | primary key                    |
+| user_id    | references | null: false, foreign_key: true |
+| item_id    | references | null: false, foreign_key: true |
+| contents   | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
+## purchases テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| id               | integer    | primary key                    |
+| user_id          | references | null: false, foreign_key: true |
+| item_id          | references | null: false, foreign_key: true |
+| shipping address | text       | null: false                    |
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 * Database initialization
 
