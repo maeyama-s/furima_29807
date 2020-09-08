@@ -59,3 +59,6 @@ group :production do
   #静的アセットファイルやログの保存先をHeroku用に微調整してくれるGem
   gem 'rails_12factor'
 end
+
+#ユーザー管理機能を簡単に実装するためのGem
+gem 'devise'
