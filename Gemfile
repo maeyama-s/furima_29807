@@ -35,6 +35,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   #FactoryBot(インスタンスをまとめることができるGem)
   gem 'factory_bot_rails'
+  #Faker(ランダムな値を生成するGem)
+  gem 'faker'
 end
 
 group :development do
