@@ -37,6 +37,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   #Faker(ランダムな値を生成するGem)
   gem 'faker'
+  #Gimei(日本人の名前や、日本の住所をランダムに生成するGem)
+  gem 'gimei'
 end
 
 group :development do
