@@ -63,3 +63,6 @@ end
 
 #ユーザー管理機能を簡単に実装するためのGem
 gem 'devise'
+
+#デバッグ補助(binding.pryが使えるようになる)のgem
+gem 'pry-rails'
