@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
-
-  #トップページ
+  # トップページ
   def index
   end
-
 end
