@@ -31,6 +31,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #RSpec(Railsのテストコードを書くために用いられるGem)
+  gem 'rspec-rails', '~> 4.0.0'
+  #FactoryBot(インスタンスをまとめることができるGem)
+  gem 'factory_bot_rails'
+  #Faker(ランダムな値を生成するGem)
+  gem 'faker'
+  #Gimei(日本人の名前や、日本の住所をランダムに生成するGem)
+  gem 'gimei'
 end
 
 group :development do
@@ -59,3 +67,9 @@ group :production do
   #静的アセットファイルやログの保存先をHeroku用に微調整してくれるGem
   gem 'rails_12factor'
 end
+
+#ユーザー管理機能を簡単に実装するためのGem
+gem 'devise'
+
+#デバッグ補助(binding.pryが使えるようになる)のgem
+gem 'pry-rails'
