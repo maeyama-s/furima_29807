@@ -73,3 +73,8 @@ gem 'devise'
 
 #デバッグ補助(binding.pryが使えるようになる)のgem
 gem 'pry-rails'
+
+#ImageMagickをRailsから使うためのGem
+gem 'mini_magick'
+#画像のサイズを調整するGem
+gem 'image_processing', '~> 1.2'
