@@ -19,4 +19,6 @@ class User < ApplicationRecord
     validates :family_name_katakana
     validates :first_name_katakana
   end
+  #他テーブルとのアソシエーション
+  has_many :items
 end
