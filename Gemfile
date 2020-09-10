@@ -78,3 +78,6 @@ gem 'pry-rails'
 gem 'mini_magick'
 #画像のサイズを調整するGem
 gem 'image_processing', '~> 1.2'
+
+#データベースへ保存せずにデータを取り扱うことができるGem
+gem 'active_hash'
