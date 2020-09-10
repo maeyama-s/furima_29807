@@ -36,18 +36,18 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column                 | Type       | Options                        |
-| ---------------------- | ---------- | ------------------------------ |
-| id                     | integer    | primary key                    |
-| user                   | references | null: false, foreign_key: true |
-| title                  | string     | null: false                    |
-| explanation            | text       | null: false                    |
-| price                  | integer    | null: false                    |
-| item_condition_id      | integer    | null: false                    |
-| shipping_charges_id    | integer    | null: false                    |
-| shipping_area_id       | integer    | null: false                    |
-| days_until_shipping_id | integer    | null: false                    |
-| category_id            | integer    | null: false                    |
+| Column                 | Type       | Options           |
+| ---------------------- | ---------- | ----------------- |
+| id                     | integer    | primary key       |
+| user                   | references | foreign_key: true |
+| title                  | string     | null: false       |
+| explanation            | text       | null: false       |
+| price                  | integer    | null: false       |
+| item_condition_id      | integer    | null: false       |
+| shipping_charges_id    | integer    | null: false       |
+| shipping_area_id       | integer    | null: false       |
+| days_until_shipping_id | integer    | null: false       |
+| category_id            | integer    | null: false       |
 
 ### Association
 
@@ -57,12 +57,12 @@ Things you may want to cover:
 
 ## comments テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| id       | integer    | primary key                    |
-| user     | references | null: false, foreign_key: true |
-| item     | references | null: false, foreign_key: true |
-| contents | text       | null: false                    |
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| id       | integer    | primary key       |
+| user     | references | foreign_key: true |
+| item     | references | foreign_key: true |
+| contents | text       | null: false       |
 
 ### Association
 
@@ -71,11 +71,11 @@ Things you may want to cover:
 
 ## purchases テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| id     | integer    | primary key                    |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| id     | integer    | primary key       |
+| user   | references | foreign_key: true |
+| item   | references | foreign_key: true |
 
 ### Association
 - belongs_to :user
