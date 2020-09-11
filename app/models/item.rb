@@ -1,5 +1,11 @@
 class Item < ApplicationRecord
+  #ActiveStorageとItemテーブルのアソシエーション
   has_one_attached :image
+  #各項目のバリデーション
+  validates :image, presence: true
+  validates :title, presence: true
+  validates :explanation, presence: true
+  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than: 10000000}
   #ActiveHashのbelongs_to_active_hashメソッドを使用できるようになる
   extend ActiveHash::Associations::ActiveRecordExtensions
   #プルダウン項目のアソシエーション

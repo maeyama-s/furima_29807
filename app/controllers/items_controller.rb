@@ -12,8 +12,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
-    redirect_to root_path
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
@@ -24,6 +28,7 @@ class ItemsController < ApplicationController
   def move_to_login
     unless user_signed_in?
       redirect_to new_user_session_path
+      #エラーメッセージをビューに渡す
       flash[:notice] = 'You need to sign in or sign up before continuing.'
     end
   end
