@@ -14,8 +14,6 @@ RSpec.describe Item, type: :model do
     end
 
     context '商品出品がうまくいかないとき' do
-      it 'ログインしていないユーザーは出品ページへ遷移できない' do
-      end
       it '画像が空だと出品できない' do
         @item.image = nil
         @item.valid?
