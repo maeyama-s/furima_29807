@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
 
   # deviseにおけるストロングパラメーターであり、追加したメソッドのパラメーターを取得できるようになる
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name, :family_name_katakana, :first_name_katakana, :birthday])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [
+                                        :nickname, :family_name, :first_name, :family_name_katakana,
+                                        :first_name_katakana, :birthday
+                                      ])
   end
 end
