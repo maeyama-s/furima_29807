@@ -2,10 +2,12 @@ class Item < ApplicationRecord
   # ActiveStorageとItemテーブルのアソシエーション
   has_one_attached :image
   # 各項目のバリデーション
-  validates :image, presence: true
-  validates :title, presence: true
-  validates :explanation, presence: true
-  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10_000_000}
+  with_options presence: true do
+    validates :image, {}
+    validates :title, {}
+    validates :explanation, {}
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10_000_000}
+  end
   # ActiveHashのbelongs_to_active_hashメソッドを使用できるようになる
   extend ActiveHash::Associations::ActiveRecordExtensions
   # プルダウン項目のアソシエーション
@@ -15,11 +17,13 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :days_until_shipping
   # プルダウン項目の id: 1 (---) が保存されないようバリデーション
-  validates :category_id, numericality: { other_than: 1 }
-  validates :item_condition_id, numericality: { other_than: 1 }
-  validates :shipping_charges_id, numericality: { other_than: 1 }
-  validates :shipping_area_id, numericality: { other_than: 1 }
-  validates :days_until_shipping_id, numericality: { other_than: 1 }
+  with_options numericality: { other_than: 1 } do
+    validates :category_id, {}
+    validates :item_condition_id, {}
+    validates :shipping_charges_id, {}
+    validates :shipping_area_id, {}
+    validates :days_until_shipping_id, {}
+  end
   # 他テーブルとのアソシエーション
   belongs_to :user
 end

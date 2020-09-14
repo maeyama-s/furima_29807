@@ -36,25 +36,50 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Category is not a number')
       end
+      it 'カテゴリーの値が1だと出品できない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
+      end
       it '商品の状態についての情報が空だと出品できない' do
         @item.item_condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Item condition is not a number')
+      end
+      it '商品の状態の値が1だと出品できない' do
+        @item.item_condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Item condition must be other than 1')
       end
       it '発送料の負担ついての情報が空だと出品できない' do
         @item.shipping_charges_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping charges is not a number')
       end
+      it '発送料の負担の値が1だと出品できない' do
+        @item.shipping_charges_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Shipping charges must be other than 1')
+      end
       it '発送元の地域ついての情報が空だと出品できない' do
         @item.shipping_area_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping area is not a number')
       end
+      it '発送元の地域の値が1だと出品できない' do
+        @item.shipping_area_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Shipping area must be other than 1')
+      end
       it '発送までの日数ついての情報が空だと出品できない' do
         @item.days_until_shipping_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Days until shipping is not a number')
+      end
+      it '発送までの日数の値が1だと出品できない' do
+        @item.days_until_shipping_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Days until shipping must be other than 1')
       end
       it '価格ついての情報が空だと出品できない' do
         @item.price = ''
