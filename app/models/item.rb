@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   # プルダウン項目のアソシエーション
   belongs_to_active_hash :category
   belongs_to_active_hash :item_condition
-  belongs_to_active_hash :shipping_charge
+  belongs_to_active_hash :shipping_charges
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :days_until_shipping
   # プルダウン項目の id: 1 (---) が保存されないようバリデーション
