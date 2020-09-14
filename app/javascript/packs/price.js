@@ -1,4 +1,5 @@
-function price() {
+function calc() {
+  let price = document.getElementById("item-price");
   let tax = document.getElementById("add-tax-price");
   let profit = document.getElementById("profit");
   price.addEventListener("keyup", () => {
@@ -7,5 +8,4 @@ function price() {
     profit.innerHTML = Math.floor(p * 0.9).toLocaleString()
   });
 }
-let = price = document.getElementById("item-price");
-price.addEventListener('click', price)
+window.addEventListener("load", calc);
