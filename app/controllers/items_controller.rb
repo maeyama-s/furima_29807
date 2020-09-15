@@ -55,11 +55,9 @@ class ItemsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
-  #権限のないユーザーが商品編集URLを入力した場合
+  # 権限のないユーザーが商品編集URLを入力した場合
   def unauthorized
     @item = Item.find(params[:id])
-    if current_user.id != @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id != @item.user_id
   end
 end
