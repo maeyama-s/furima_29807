@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  before_action :unauthorized, only: :edit
+  before_action :set_item, only: [:show, :update]
 
   # トップページ
   def index
@@ -21,15 +23,37 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(
       :image, :title, :explanation, :price, :category_id, :item_condition_id,
       :shipping_charges_id, :shipping_area_id, :days_until_shipping_id
     ).merge(user_id: current_user.id)
+  end
+
+  #権限のないユーザーが商品編集URLを入力した場合
+  def unauthorized
+    @item = Item.find(params[:id])
+    if current_user.id != @item.user_id
+      redirect_to root_path
+    end
   end
 end
