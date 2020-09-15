@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
   before_action :unauthorized, only: :edit
-  before_action :set_item, only: [:show, :update]
+  before_action :set_item, only: [:show, :update, :destroy]
 
   # トップページ
   def index
@@ -36,6 +36,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def set_item
@@ -49,11 +57,9 @@ class ItemsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
-  #権限のないユーザーが商品編集URLを入力した場合
+  # 権限のないユーザーが商品編集URLを入力した場合
   def unauthorized
     @item = Item.find(params[:id])
-    if current_user.id != @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id != @item.user_id
   end
 end
