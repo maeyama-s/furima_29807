@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :authenticate_user, only: :edit
+  before_action :unauthorized, only: :edit
   before_action :set_item, only: [:show, :edit, :update]
 
   # トップページ
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   #権限のないユーザーが商品編集URLを入力した場合
-  def authenticate_user
+  def unauthorized
     @item = Item.find(params[:id])
     if current_user.id != @item.user_id
       redirect_to root_path
