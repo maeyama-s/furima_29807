@@ -21,4 +21,5 @@ class User < ApplicationRecord
   end
   # 他テーブルとのアソシエーション
   has_many :items
+  has_many :purchases
 end

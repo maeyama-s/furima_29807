@@ -26,4 +26,5 @@ class Item < ApplicationRecord
   end
   # 他テーブルとのアソシエーション
   belongs_to :user
+  has_one :purchase
 end
