@@ -1,6 +1,7 @@
 class CreateShippingAddresses < ActiveRecord::Migration[6.0]
   def change
     create_table :shipping_addresses do |t|
+      t.references :purchase,     foreign_key: true
       t.string  :post_code,       null: false
       t.integer :prefectures_id,  null: false
       t.string  :city,            null: false

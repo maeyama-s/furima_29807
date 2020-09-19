@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 // JavaScriptファイルを読み込む記述
 require("./price")
+require("./card")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

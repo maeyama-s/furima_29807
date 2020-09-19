@@ -1,0 +1,21 @@
+class ItemSell
+
+  include ActiveModel::Model
+  attr_accessor :user_id, :item_id, :post_code, :prefectures_id, :city, :adress, :building_name, :phone_number
+
+  with_options presence: true do
+    validates :post_code, {}
+    validates :city, {}
+    validates :adress, {}
+    validates :phone_number, {}
+  end
+  validates :prefectures_id, numericality: { other_than: 1 }
+
+  def save
+    purchase = Purchase.create(user_id: user_id, item_id: item_id)
+    ShippingAddress.create(
+      purchase_id: purchase.id, post_code: post_code, prefectures_id: prefectures_id, city: city,
+      adress: adress, building_name: building_name, phone_number: phone_number
+      )
+  end
+end
