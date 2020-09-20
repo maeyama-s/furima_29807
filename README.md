@@ -84,15 +84,16 @@ Things you may want to cover:
 
 ## shipping_addresses テーブル
 
-| Column         | Type       | Options     |
-| -------------- | ---------- | ----------- |
-| id             | integer    | primary key |
-| post_code      | string     | null: false |
-| prefectures_id | integer    | null: false |
-| city           | string     | null: false |
-| adress         | string     | null: false |
-| building_name  | string     |             |
-| phone_number   | string     | null: false |
+| Column         | Type       | Options           |
+| -------------- | ---------- | ----------------- |
+| id             | integer    | primary key       |
+| purchase       | references | foreign_key: true |
+| post_code      | string     | null: false       |
+| prefectures_id | integer    | null: false       |
+| city           | string     | null: false       |
+| adress         | string     | null: false       |
+| building_name  | string     |                   |
+| phone_number   | string     | null: false       |
 
 ### Association
 - belongs_to :purchase

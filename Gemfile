@@ -81,3 +81,6 @@ gem 'image_processing', '~> 1.2'
 
 #データベースへ保存せずにデータを取り扱うことができるGem
 gem 'active_hash'
+
+#クレジット決済機能を導入できるAPI
+gem 'payjp'
