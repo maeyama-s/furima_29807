@@ -1,13 +1,14 @@
 class ItemSell
 
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :prefectures_id, :city, :adress, :building_name, :phone_number
+  attr_accessor :user_id, :item_id, :post_code, :prefectures_id, :city, :adress, :building_name, :phone_number, :token
 
   with_options presence: true do
     validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :city, {}
     validates :adress, {}
     validates :phone_number, format: { with: /\d{,11}/ }
+    validates :token
   end
   validates :prefectures_id, numericality: { other_than: 1 }
 
