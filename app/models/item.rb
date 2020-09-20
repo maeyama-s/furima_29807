@@ -3,9 +3,9 @@ class Item < ApplicationRecord
   has_one_attached :image
   # 各項目のバリデーション
   with_options presence: true do
-    validates :image, {}
-    validates :title, {}
-    validates :explanation, {}
+    validates :image
+    validates :title
+    validates :explanation
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10_000_000 }
   end
   # ActiveHashのbelongs_to_active_hashメソッドを使用できるようになる

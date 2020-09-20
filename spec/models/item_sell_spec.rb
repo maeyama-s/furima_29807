@@ -62,6 +62,11 @@ RSpec.describe ItemSell, type: :model do
         @item_sell.valid?
         expect(@item_sell.errors.full_messages).to include("Phone number is not a number")
       end
+      it "phone_numberが整数11桁以内でないと購入できない" do
+        @item_sell.phone_number = "123456789012"
+        @item_sell.valid?
+        expect(@item_sell.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
       it "tokenが空だと購入できない" do
         @item_sell.token = ""
         @item_sell.valid?
