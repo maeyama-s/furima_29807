@@ -27,11 +27,6 @@ RSpec.describe ItemSell, type: :model do
         @item_sell.valid?
         expect(@item_sell.errors.full_messages).to include("Item can't be blank")
       end
-      it "purchase_idが空だと購入できない" do
-        @item_sell.purchase_id = ""
-        @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("Purchase can't be blank")
-      end
       it "post_codeが空だと購入できない" do
         @item_sell.post_code = ""
         @item_sell.valid?
@@ -61,6 +56,11 @@ RSpec.describe ItemSell, type: :model do
         @item_sell.phone_number = ""
         @item_sell.valid?
         expect(@item_sell.errors.full_messages).to include("Phone number can't be blank")
+      end
+      it "phone_numberが整数でないと購入できない" do
+        @item_sell.phone_number = "電話番号"
+        @item_sell.valid?
+        expect(@item_sell.errors.full_messages).to include("Phone number is not a number")
       end
       it "tokenが空だと購入できない" do
         @item_sell.token = ""

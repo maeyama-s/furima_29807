@@ -6,11 +6,10 @@ class ItemSell
   with_options presence: true do
     validates :user_id, {}
     validates :item_id, {}
-    validates :purchase_id, {}
     validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :city, {}
     validates :adress, {}
-    validates :phone_number, format: { with: /\d{,11}/ }
+    validates :phone_number, numericality: { only_integer: true }
     validates :token
   end
   validates :prefectures_id, numericality: { other_than: 1 }
