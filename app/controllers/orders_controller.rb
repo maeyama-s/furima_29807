@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  before_action :my_item, only: :index
+  before_action :sold_out, only: :index
 
   def index
     @item = Item.find(params[:item_id])
@@ -37,5 +40,18 @@ class OrdersController < ApplicationController
       card: token_params[:token],
       currency:'jpy'
     )
+  end
+
+  # 出品ユーザーが自分の商品購入URLを入力した場合
+  def my_item
+    item = Item.find(params[:item_id])
+    redirect_to root_path if current_user.id == item.user_id
+  end
+
+  def sold_out
+    item = Item.find(params[:item_id])
+    if Purchase.find_by(item_id: item.id)
+      redirect_to root_path
+    end
   end
 end
