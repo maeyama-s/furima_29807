@@ -29,11 +29,11 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: sell_params[:token],
-      currency:'jpy'
+      currency: 'jpy'
     )
   end
 
@@ -43,9 +43,7 @@ class OrdersController < ApplicationController
   end
 
   def sold_out
-    if Purchase.find_by(item_id: @item.id)
-      redirect_to root_path
-    end
+    redirect_to root_path if Purchase.find_by(item_id: @item.id)
   end
 
   def set_item
