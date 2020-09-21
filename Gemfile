@@ -84,3 +84,6 @@ gem 'active_hash'
 
 #クレジット決済機能を導入できるAPI
 gem 'payjp'
+
+#AmazonS3
+gem "aws-sdk-s3", require: false
