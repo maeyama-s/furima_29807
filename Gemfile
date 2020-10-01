@@ -66,6 +66,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   #静的アセットファイルやログの保存先をHeroku用に微調整してくれるGem
   gem 'rails_12factor'
+  # 全世界に公開されるサーバ上で良く利用されるアプリケーションサーバー
+  gem 'unicorn', '5.4.1'
 end
 
 #ユーザー管理機能を簡単に実装するためのGem
@@ -87,3 +89,4 @@ gem 'payjp'
 
 #AmazonS3
 gem "aws-sdk-s3", require: false
+
