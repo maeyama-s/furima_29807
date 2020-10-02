@@ -39,6 +39,12 @@ group :development, :test do
   gem 'faker'
   #Gimei(日本人の名前や、日本の住所をランダムに生成するGem)
   gem 'gimei'
+  # Capistranoを利用するためのGem
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
