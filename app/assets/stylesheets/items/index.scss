@@ -253,6 +253,17 @@ a {
 
 .item-img-content {
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 135px;
+  height: 135px;
+  overflow: hidden;
+}
+
+.images {
+  max-height: 135px;
+  max-width: 135px;
 }
 
 .item-img {

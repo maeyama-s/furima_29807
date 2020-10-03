@@ -25,10 +25,15 @@
   font-size: 25px;
 }
 
+.item-img-content-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
+  max-height: 300px;
+  margin: 10px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }

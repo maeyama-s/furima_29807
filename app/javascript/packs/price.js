@@ -1,3 +1,4 @@
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 function calc() {
   let price = document.getElementById("item-price");
   let tax = document.getElementById("add-tax-price");
@@ -9,3 +10,4 @@ function calc() {
   });
 }
 window.addEventListener("load", calc);
+}

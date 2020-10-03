@@ -130,7 +130,9 @@
       <li class='list'>
         <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
-          <%= image_tag item.image, class: "item-img" if item.image.attached? %>
+          <% item.images.each do |image| %>
+            <%= image_tag image, class:'images' if item.images.attached? %>
+          <% end %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <% if Purchase.find_by(item_id: item.id) %>
