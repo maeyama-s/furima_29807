@@ -256,14 +256,15 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 135px;
-  height: 135px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .images {
-  max-height: 135px;
-  max-width: 135px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .item-img {
