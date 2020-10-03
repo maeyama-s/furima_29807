@@ -89,6 +89,19 @@
   margin-bottom: 15px;
 }
 
+.new-item-image {
+  /* preview.jsで追加表示させる画像を縦横比を維持したまま表示サイズ上限設定する */
+  max-height: 100px;
+  max-width: 500px;
+}
+
+#image-element {
+  /* preview.jsで追加表示させる画像の位置調整 */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 /* /出品画像 */
 
 /* 商品名と商品説明 */
