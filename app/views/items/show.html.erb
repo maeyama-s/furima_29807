@@ -6,7 +6,7 @@
     <h2 class="name">
       <%= @item.title %>
     </h2>
-    <div class='item-img-content'>
+    <div class='item-img-content-show'>
       <% @item.images.each do |image| %>
         <%= image_tag image, class:'item-box-img' if @item.images.attached? %>
       <% end %>
