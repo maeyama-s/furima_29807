@@ -7,7 +7,9 @@
       <%= @item.title %>
     </h2>
     <div class='item-img-content'>
-      <%= image_tag @item.image, class:"item-box-img" if @item.image.attached? %>
+      <% @item.images.each do |image| %>
+        <%= image_tag image, class:'item-box-img' if @item.images.attached? %>
+      <% end %>
       <%# 商品が売れている場合は、sold outを表示しましょう %>
       <% if Purchase.find_by(item_id: @item.id) %>
         <div class='sold-out'>

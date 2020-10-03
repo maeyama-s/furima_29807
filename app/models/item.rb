@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   # ActiveStorageとItemテーブルのアソシエーション
-  has_one_attached :image
+  has_many_attached :images
   # 各項目のバリデーション
   with_options presence: true do
-    validates :image
+    validates :images
     validates :title
     validates :explanation
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10_000_000 }
