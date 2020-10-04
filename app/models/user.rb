@@ -22,4 +22,6 @@ class User < ApplicationRecord
   # 他テーブルとのアソシエーション
   has_many :items
   has_many :purchases
+  # 親モデルが削除された時、それに紐付ている子モデルも一緒に削除されるというオプション。
+  has_one :card, dependent: :destroy
 end
