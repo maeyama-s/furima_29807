@@ -20,17 +20,17 @@ RSpec.describe ItemSell, type: :model do
       it 'user_idが空だと購入できない' do
         @item_sell.user_id = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("Userを入力してください")
+        expect(@item_sell.errors.full_messages).to include('Userを入力してください')
       end
       it 'item_idが空だと購入できない' do
         @item_sell.item_id = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("Itemを入力してください")
+        expect(@item_sell.errors.full_messages).to include('Itemを入力してください')
       end
       it 'post_codeが空だと購入できない' do
         @item_sell.post_code = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("郵便番号を入力してください")
+        expect(@item_sell.errors.full_messages).to include('郵便番号を入力してください')
       end
       it 'post_codeが『○○○-○○○○』でないと購入できない' do
         @item_sell.post_code = '1234-567'
@@ -45,17 +45,17 @@ RSpec.describe ItemSell, type: :model do
       it 'cityが空だと購入できない' do
         @item_sell.city = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("市町村区を入力してください")
+        expect(@item_sell.errors.full_messages).to include('市町村区を入力してください')
       end
       it 'adressが空だと購入できない' do
         @item_sell.adress = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("番地を入力してください")
+        expect(@item_sell.errors.full_messages).to include('番地を入力してください')
       end
       it 'phone_numberが空だと購入できない' do
         @item_sell.phone_number = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("電話番号を入力してください")
+        expect(@item_sell.errors.full_messages).to include('電話番号を入力してください')
       end
       it 'phone_numberが整数でないと購入できない' do
         @item_sell.phone_number = '電話番号'
@@ -70,7 +70,7 @@ RSpec.describe ItemSell, type: :model do
       it 'tokenが空だと購入できない' do
         @item_sell.token = ''
         @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include("クレジットカード情報を入力してください")
+        expect(@item_sell.errors.full_messages).to include('クレジットカード情報を入力してください')
       end
     end
   end
