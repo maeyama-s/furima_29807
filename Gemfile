@@ -96,3 +96,5 @@ gem 'payjp'
 #AmazonS3
 gem "aws-sdk-s3", require: false
 
+# rails-i18nに記述してある日本語を使えるようになる
+gem 'rails-i18n'
