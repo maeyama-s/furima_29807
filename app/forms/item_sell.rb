@@ -10,7 +10,6 @@ class ItemSell
     validates :city
     validates :adress
     validates :phone_number, numericality: { only_integer: true }, length: { maximum: 11 }
-    validates :token
   end
   validates :prefectures_id, numericality: { other_than: 1 }
 
