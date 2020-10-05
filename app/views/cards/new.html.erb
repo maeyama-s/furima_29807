@@ -1,24 +1,37 @@
+<%= render "shared/header" %>
+
+<div class="card-new">
+<div class="card-new-page">
 <%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
   <div class="Cardpage">
     <h1>カード登録</h1>
   </div><br>
-  <div class='form-wrap'>
+  <div class='form-wraps'>
     <%= f.label :number, "【カード番号】" %>
-    <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+    <br>
+    <%= f.text_field :number, class:"card-number-new", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
   </div>
-  <div class='form-wrap'>
+    <br>
+  <div class='form-wraps'>
     <%= f.label :cvc ,"【ＣＶＣ】" %>
-    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
+    <br>
+    <%= f.text_field :cvc, class:"card-cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
   </div>
-  <div class='form-wrap'>
+  <div class='form-wraps'>
   <br>
     <p>【有効期限】</p>
-    <div class='input-expiration-date-wrap'>
+    <div class='input-expiration-date-wraps'>
       <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
       <p>月</p>
       <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "exp_year" %>
       <p>年</p>
     </div>
+    <br>
+    <br>
   </div>
   <%= f.submit "登録する" , class:"button" %>
 <% end %>
+</div>
+</div>
+
+<%= render "shared/footer" %>

@@ -1,13 +1,13 @@
-.users-show {
-  background-image: image-url('bags.jpg');
+.card-new {
+  background-image: image-url('card-new');
   background-size: cover;
-  height: 750px;
+  height: 600px;
   display: flex;
   align-items: center;
   margin: 50px 0;
 }
 
-.AccountPage {
+.card-new-page {
   margin: 50px auto 50px auto;
   width: 600px;
   padding: 50px;
@@ -20,26 +20,26 @@
   background-color: white;
 }
 
-.AccountPage:hover {
+.card-new-page:hover {
   box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.4);
   background-color: rgb(219, 248, 250);
   /* 変化するまでの時間を設定 */
   transition: 0.5s;
 }
 
-.AccountPage__title {
+.Cardpage {
   font-size: 30px;
 }
 
-.Card__title, .Account__info, .card-number {
-  margin-top: 20px;
-  font-size: 25px;
+.input-expiration-date-wraps {
+  display: flex;
+  justify-content: center;
 }
 
-.password-comment {
-  font-size: 11px;
+.card-cvc {
+  width: 220px;
 }
 
-.user-show-errors {
-  color: red;
+.card-number-new {
+  width: 220px;
 }
