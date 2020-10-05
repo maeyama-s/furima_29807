@@ -4,7 +4,16 @@
 <div class="AccountPage">
   <div class="AccountPage__title">
     <h1>マイページ</h1>
-  </div><br>
+  </div>
+
+  <%# エラーメッセージがある場合 %>
+  <% if @messages %>
+    <%# エラーメッセージの表示 %>
+    <% @messages.each do |message| %>
+      <p class="user-show-errors"><%= message %></p>
+    <% end %>
+  <% end %>
+
   <div class="Card__title">
     <h2>カード情報<h2>
   </div>
@@ -42,6 +51,15 @@
         </div>
         <div class="FormField__email">
           <%= f.email_field :email %>
+        </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__password">
+          <%= f.label :password %>
+          <p class="password-comment">＊更新のためにパスワードを入力してください</p>
+        </div>
+        <div class="FormField__password">
+          <%= f.password_field :password %>
         </div>
         <br>
       </div>

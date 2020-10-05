@@ -22,7 +22,7 @@
 
 .AccountPage:hover {
   box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.4);
-  background-color: rgb(252, 255, 231);
+  background-color: rgb(219, 248, 250);
   /* 変化するまでの時間を設定 */
   transition: 0.5s;
 }
@@ -34,4 +34,12 @@
 .Card__title, .Account__info, .card-number {
   margin-top: 20px;
   font-size: 25px;
+}
+
+.password-comment {
+  font-size: 11px;
+}
+
+.user-show-errors {
+  color: red;
 }
