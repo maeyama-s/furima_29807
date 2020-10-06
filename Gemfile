@@ -98,3 +98,6 @@ gem "aws-sdk-s3", require: false
 
 # rails-i18nに記述してある日本語を使えるようになる
 gem 'rails-i18n'
+
+# シンプルな検索フォームと高度な検索フォームの作成を可能にするgemです。
+gem 'ransack'

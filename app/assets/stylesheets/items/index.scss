@@ -6,6 +6,38 @@ a {
   background: #f8f8f8;
 }
 
+.category-search-form-p {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.category-search-form {
+  text-align: center;
+  background-color: white;
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 30px;
+  cursor: default;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+
+.category-search-form:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  background-color: rgb(235, 253, 255);
+  /* 変化するまでの時間を設定 */
+  transition: 0.5s;
+}
+
+.category-search-form-price {
+  margin: 10px 0;
+}
+
+.category-search-form input {
+  padding: 0 10px;
+}
+
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
