@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
   before_action :unauthorized, only: :edit
   before_action :set_item, only: [:show, :update, :destroy]
+  before_action :search_item, only: [:index, :search]
 
   # トップページ
   def index
@@ -45,6 +46,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @results = @p.result.includes(:category) # 検索条件にマッチした商品の情報を取得
+  end
+
   private
 
   def set_item
@@ -62,5 +67,9 @@ class ItemsController < ApplicationController
   def unauthorized
     @item = Item.find(params[:id])
     redirect_to root_path if current_user.id != @item.user_id
+  end
+
+  def search_item
+    @p = Item.ransack(params[:q])  # 検索オブジェクトを生成
   end
 end

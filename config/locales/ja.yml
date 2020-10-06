@@ -16,7 +16,7 @@ ja:
         title: 商品名
         explanation: 商品の説明
         price: 価格
-        category_id: カテゴリー
+        category: カテゴリー
         item_condition_id: 商品の状態
         shipping_charges_id: 配送料の負担
         shipping_area_id: 発送元の地域
