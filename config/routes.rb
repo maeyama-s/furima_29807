@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :update]
   resources :cards, only: [:new, :create]
+  # 検索機能
+  get 'items/search'
 end
