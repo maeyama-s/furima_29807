@@ -86,6 +86,20 @@
   <%# /商品の概要 %>
 
   <div class="comment-box">
+
+  <%# コメント機能 %>
+    <h3>mini_talk_app</h3>
+    <%= form_with model: @comment, url: item_comments_path(@item.id) do |f| %>
+      <%= f.text_field :text %>
+      <%= f.submit '送信' %>
+    <% end %>
+    <div id='comments'>
+      <% @comments.reverse_each do |comment| %>
+        <p><%= comment.text %></p>
+      <% end %>
+    </div>
+  <%# /コメント機能 %>
+
     <form>
       <textarea class="comment-text"></textarea>
       <p class="comment-warn">
