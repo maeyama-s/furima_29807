@@ -85,34 +85,21 @@
   </div>
   <%# /商品の概要 %>
 
-  <div class="comment-box">
-
   <%# コメント機能 %>
-    <h3>mini_talk_app</h3>
+  <div class="comment-box">
+    <h3 class="comment-h3">コメント欄</h3>
     <%= form_with model: @comment, url: item_comments_path(@item.id) do |f| %>
-      <%= f.text_field :text %>
-      <%= f.submit '送信' %>
+      <%= f.text_field :text, class: "comment-text" %>
+      <%= f.submit '送信', class: "comment-btn" %>
     <% end %>
     <div id='comments'>
       <% @comments.reverse_each do |comment| %>
         <p><%= comment.text %></p>
       <% end %>
     </div>
+  </div>
   <%# /コメント機能 %>
 
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品

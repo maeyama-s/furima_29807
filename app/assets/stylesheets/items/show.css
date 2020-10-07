@@ -150,21 +150,16 @@
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
+  padding: 20px;
 }
 
 .comment-text {
   width: 100%;
   height: 100px;
   padding: 10px;
+  margin: 10px 0;
   border: solid 2px #dedede;
   resize: none;
-}
-
-.comment-warn {
-  padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
-  text-align: left;
 }
 
 .comment-btn {
@@ -182,10 +177,6 @@
 .comment-flag {
   display: flex;
   justify-content: center;
-}
-
-.comment-flag-icon {
-  margin: 10px 5px 0 0;
 }
 
 .links {
