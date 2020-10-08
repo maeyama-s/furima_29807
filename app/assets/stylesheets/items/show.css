@@ -153,6 +153,10 @@
   padding: 20px;
 }
 
+.comment-box p {
+  word-wrap: break-word; /* 折り返し */
+}
+
 .comment-text {
   width: 100%;
   height: 100px;

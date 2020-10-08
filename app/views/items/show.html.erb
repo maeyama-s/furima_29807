@@ -94,7 +94,8 @@
     <% end %>
     <div id='comments'>
       <% @comments.reverse_each do |comment| %>
-        <p><%= comment.text %></p>
+        <% user = comment.user %>
+        <p><%= user.nickname %> : <%= comment.text %> [ <%= comment.created_at.strftime("%m/%d %H:%M") %> ]</p>
       <% end %>
     </div>
   </div>
