@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'items/search', to: 'items#search'
   resources :items do
     resources :orders, only: [:index, :create]
+    resources :comments, only: :create
   end
   resources :users, only: [:show, :update]
   resources :cards, only: [:new, :create]
