@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
   def show
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # 環境変数を読み込む
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # 環境変数を読み込む
     card = Card.find_by(user_id: current_user.id) # ユーザーのid情報を元に、カード情報を取得
 
     # マイページに行くときにカードが未登録であれば、まずはカード登録へ行くように設定
@@ -18,7 +17,7 @@ class UsersController < ApplicationController
       sign_in(@user, bypass: true) if current_user.id == @user.id
       redirect_to root_path # 更新できたらrootパスへ
     else
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # 環境変数を読み込む
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # 環境変数を読み込む
       card = Card.find_by(user_id: current_user.id) # ユーザーのid情報を元に、カード情報を取得
 
       # マイページに行くときにカードが未登録であれば、まずはカード登録へ行くように設定

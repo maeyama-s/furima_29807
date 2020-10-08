@@ -16,13 +16,13 @@ class OrdersController < ApplicationController
     @sell = ItemSell.new(sell_params)
     if @sell.valid?
 
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # 環境変数を読み込む
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # 環境変数を読み込む
       customer_token = current_user.card.customer_token # ログインしているユーザーの顧客トークンを定義
       Payjp::Charge.create(
         amount: @item.price, # 商品の値段
         customer: customer_token, # 顧客のトークン
         currency: 'jpy' # 通貨の種類（日本円）
-        )
+      )
 
       @sell.save
       redirect_to root_path
