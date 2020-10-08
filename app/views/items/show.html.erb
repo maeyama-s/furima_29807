@@ -88,9 +88,11 @@
   <%# コメント機能 %>
   <div class="comment-box">
     <h3 class="comment-h3">コメント欄</h3>
+    <% if user_signed_in? %>
     <%= form_with model: @comment, url: item_comments_path(@item.id) do |f| %>
       <%= f.text_field :text, class: "comment-text" %>
       <%= f.submit '送信', class: "comment-btn" %>
+    <% end %>
     <% end %>
     <div id='comments'>
       <% @comments.reverse_each do |comment| %>
