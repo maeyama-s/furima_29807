@@ -67,11 +67,6 @@ RSpec.describe ItemSell, type: :model do
         @item_sell.valid?
         expect(@item_sell.errors.full_messages).to include('電話番号は11文字以内で入力してください')
       end
-      it 'tokenが空だと購入できない' do
-        @item_sell.token = ''
-        @item_sell.valid?
-        expect(@item_sell.errors.full_messages).to include('クレジットカード情報を入力してください')
-      end
     end
   end
 end

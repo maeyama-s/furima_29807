@@ -28,55 +28,25 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('商品の説明を入力してください')
       end
-      it 'カテゴリーついての情報が空だと出品できない' do
-        @item.category_id = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include('カテゴリーは数値で入力してください')
-      end
-      it 'カテゴリーの値が1だと出品できない' do
-        @item.category_id = 1
-        @item.valid?
-        expect(@item.errors.full_messages).to include('カテゴリーは1以外の値にしてください')
-      end
       it '商品の状態についての情報が空だと出品できない' do
         @item.item_condition_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include('商品の状態は数値で入力してください')
-      end
-      it '商品の状態の値が1だと出品できない' do
-        @item.item_condition_id = 1
-        @item.valid?
-        expect(@item.errors.full_messages).to include('商品の状態は1以外の値にしてください')
+        expect(@item.errors.full_messages).to include('商品の状態を入力してください')
       end
       it '発送料の負担ついての情報が空だと出品できない' do
         @item.shipping_charges_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include('配送料の負担は数値で入力してください')
-      end
-      it '発送料の負担の値が1だと出品できない' do
-        @item.shipping_charges_id = 1
-        @item.valid?
-        expect(@item.errors.full_messages).to include('配送料の負担は1以外の値にしてください')
+        expect(@item.errors.full_messages).to include('配送料の負担を入力してください')
       end
       it '発送元の地域ついての情報が空だと出品できない' do
         @item.shipping_area_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include('発送元の地域は数値で入力してください')
-      end
-      it '発送元の地域の値が1だと出品できない' do
-        @item.shipping_area_id = 1
-        @item.valid?
-        expect(@item.errors.full_messages).to include('発送元の地域は1以外の値にしてください')
+        expect(@item.errors.full_messages).to include('発送元の地域を入力してください')
       end
       it '発送までの日数ついての情報が空だと出品できない' do
         @item.days_until_shipping_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include('発送までの日数は数値で入力してください')
-      end
-      it '発送までの日数の値が1だと出品できない' do
-        @item.days_until_shipping_id = 1
-        @item.valid?
-        expect(@item.errors.full_messages).to include('発送までの日数は1以外の値にしてください')
+        expect(@item.errors.full_messages).to include('発送までの日数を入力してください')
       end
       it '価格ついての情報が空だと出品できない' do
         @item.price = ''
