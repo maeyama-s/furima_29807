@@ -193,15 +193,21 @@
 
 .links {
   display: flex;
-  justify-content: space-between;
   width: 50vw;
-
+  justify-content: space-between;
 }
 
-.change-item-btn {
+.change-item-btn-front, .change-item-btn-back {
   font-size: 30px;
   text-decoration: none;
   color: #3CCACE;
+}
+
+.change-item-btn-front {
+}
+
+.change-item-btn-back {
+
 }
 
 .another-item {
