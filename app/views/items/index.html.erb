@@ -20,7 +20,11 @@
         <%= f.submit '検索' %>
       <% end %>
     </div>
+    <div class="favorite-index">
+      <%= link_to "お気に入り一覧", user_favorites_path(current_user.id) %>
+    </div>
   </div>
+
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
