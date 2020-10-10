@@ -83,7 +83,7 @@
             <i class="fas fa-star star-before"></i>
           <% end %>
         <% end %>
-          <span>お気に入り 0</span>
+          <span>お気に入り <%= Favorite.where(item_id: @item.id).length %></span>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
