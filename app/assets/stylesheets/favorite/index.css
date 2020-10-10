@@ -1,0 +1,13 @@
+.favorite-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 50px auto 0 auto;
+
+  background-color: rgb(235, 253, 255);
+  width: 200px;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 30px;
+  cursor: default;
+  letter-spacing: 1px;
+  padding: 10px;
+}
