@@ -24,4 +24,5 @@ class Item < ApplicationRecord
   has_one :purchase
   belongs_to :category
   has_many :comments
+  has_many :favorites
 end

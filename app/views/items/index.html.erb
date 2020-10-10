@@ -20,7 +20,11 @@
         <%= f.submit '検索' %>
       <% end %>
     </div>
+    <div class="favorite-index">
+      <%= link_to "お気に入り一覧", user_favorites_path(current_user.id) %>
+    </div>
   </div>
+
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
@@ -170,9 +174,13 @@
           </h3>
           <div class='item-price'>
             <span><%= item.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+            <div>
+              <% if Favorite.find_by(user_id: current_user.id, item_id: item.id) %>
+                <i class="fas fa-star star-after"></i>
+              <% else %>
+                <i class="fas fa-star star-before"></i>
+              <% end %>
+              <span><%= Favorite.where(item_id: item.id).length %></span>
             </div>
           </div>
         </div>

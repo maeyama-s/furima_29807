@@ -121,8 +121,16 @@
   margin-right: 20px;
 }
 
-.favorite-star-icon {
+.fa-star {
   margin-right: 5px;
+}
+
+.star-after {
+  color: rgb(62, 216, 255);
+}
+
+.star-before {
+  color: black;
 }
 
 .report-btn {

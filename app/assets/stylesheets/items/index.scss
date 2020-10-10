@@ -9,13 +9,15 @@ a {
 .category-search-form-p {
   background-color: white;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-search-form {
   text-align: center;
   background-color: white;
   width: 600px;
-  margin: 0 auto;
   border: 1px solid rgb(122, 122, 122);
   border-radius: 30px;
   cursor: default;
@@ -36,6 +38,29 @@ a {
 
 .category-search-form input {
   padding: 0 10px;
+}
+
+.favorite-index {
+  text-align: center;
+  background-color: white;
+  width: 200px;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 30px;
+  cursor: default;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.favorite-index a {
+  color: black;
+}
+
+.favorite-index:hover{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  background-color: rgb(235, 253, 255);
+  /* 変化するまでの時間を設定 */
+  transition: 0.5s;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
