@@ -13,7 +13,6 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @user = User.find_by(params[:user_id])
-    @favorites = Favorite.where(user_id: @user.id).order('created_at DESC')
+    @favorites = Favorite.where(user_id: params[:user_id]).order('created_at DESC')
   end
 end
