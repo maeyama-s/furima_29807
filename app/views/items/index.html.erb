@@ -1,33 +1,6 @@
 <%= render "shared/header" %>
 <div class='main'>
 
-  <div class="category-search-form-p">
-    <div class="category-search-form">
-      <%= search_form_for @p, url: items_search_path do |f| %>
-        <%= f.label :name_eq, 'カテゴリー検索' %>
-        <%= f.collection_select :category_id_eq, Category.all, :id, :name,  include_blank: '指定なし' %>
-        <div class="category-search-form-price">
-        <%= f.label :price, '価格：' %>
-        <%= f.radio_button :price_lteq, '' %>
-        指定なし
-        <%= f.radio_button :price_lteq, '1000' %>
-        1000円以下
-        <%= f.radio_button :price_lteq, '2500' %>
-        2500円以下
-        <%= f.radio_button :price_lteq, '5000' %>
-        5000円以下
-        </div>
-        <%= f.submit '検索' %>
-      <% end %>
-    </div>
-    <% if user_signed_in? %>
-      <div class="favorite-index">
-        <%= link_to "お気に入り一覧", user_favorites_path(current_user.id) %>
-      </div>
-    <% end %>
-  </div>
-
-
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>

@@ -54,12 +54,75 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+  align-items: center;
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
+}
 
+.category-search-form-p {
+  background-color: white;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-search-form {
+  text-align: center;
+  background-color: white;
+  width: 520px;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 30px;
+  cursor: default;
+  letter-spacing: 1px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.category-search-form:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  background-color: rgb(235, 253, 255);
+  /* 変化するまでの時間を設定 */
+  transition: 0.5s;
+}
+
+.category-search-form-price {
+  margin: 10px 0;
+}
+
+.category-search-form input {
+  padding: 0 10px;
+}
+
+.categoyu-search {
+  margin-left: 30px;
+}
+
+.favorite-index {
+  text-align: center;
+  background-color: white;
+  width: 150px;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 30px;
+  cursor: default;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.favorite-index a {
+  color: black;
+}
+
+.favorite-index:hover{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  background-color: rgb(235, 253, 255);
+  /* 変化するまでの時間を設定 */
+  transition: 0.5s;
 }
 
 .category-list {

@@ -4,14 +4,39 @@
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
 
     <%= form_with(url: namesearch_items_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "キーワードから探す", class: "input-box" %>
+      <%= form.text_field :keyword, placeholder: "商品名から探す", class: "input-box" %>
       <%= form.submit '', class:"search-button" %>
     <% end %>
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+
+  <div class="category-search-form-p">
+    <div class="category-search-form">
+      <%= search_form_for @p, url: items_search_path do |f| %>
+        <div class="category-search-form-price">
+        <%= f.label :price, '価格：' %>
+        <%= f.radio_button :price_lteq, '' %>
+        指定なし
+        <%= f.radio_button :price_lteq, '1000' %>
+        1000円以下
+        <%= f.radio_button :price_lteq, '2500' %>
+        2500円以下
+        <%= f.radio_button :price_lteq, '5000' %>
+        5000円以下
+        </div>
+        <%= f.label :name_eq, 'カテゴリー:' %>
+        <%= f.collection_select :category_id_eq, Category.all, :id, :name,  include_blank: '指定なし' %>
+        <%= f.submit '検索', class:'categoyu-search' %>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="favorite-index">
+        <%= link_to "お気に入り一覧", user_favorites_path(current_user.id) %>
+      </div>
+    <% end %>
+  </div>
+
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
