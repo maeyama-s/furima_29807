@@ -23,8 +23,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
   belongs_to :category
-  has_many :comments
-  has_many :favorites
+  # 親モデルが削除されたとき、それに紐付ている子モデルも一緒に削除するようオプションつける。
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def self.search(search)
     if search != ""

@@ -139,7 +139,6 @@
 .lists-right {
   display: flex;
   list-style: none;
-  align-items: flex-end;
 }
 
 
@@ -158,7 +157,6 @@
 
 .login {
   text-decoration: none;
-  line-height: 32px;
   margin-right: 3vw;
   color: #333333;
 }

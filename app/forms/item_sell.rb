@@ -7,11 +7,11 @@ class ItemSell
     validates :user_id
     validates :item_id
     validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
+    validates :prefectures_id
     validates :city
     validates :adress
     validates :phone_number, numericality: { only_integer: true }, length: { maximum: 11 }
   end
-  validates :prefectures_id, numericality: { other_than: 1 }
 
   def save
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
