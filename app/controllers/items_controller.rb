@@ -52,6 +52,10 @@ class ItemsController < ApplicationController
     @results = @p.result.includes(:category) # 検索条件にマッチした商品の情報を取得
   end
 
+  def namesearch
+    @items = Item.search(params[:keyword])
+  end
+
   private
 
   def set_item

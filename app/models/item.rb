@@ -25,4 +25,12 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :favorites
+
+  def self.search(search)
+    if search != ""
+      Item.where('title LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
