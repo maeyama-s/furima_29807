@@ -20,10 +20,10 @@ class User < ApplicationRecord
     validates :first_name_katakana
   end
   # 他テーブルとのアソシエーション
-  has_many :items
-  has_many :purchases
-  has_many :comments
-  has_many :favorites
+  has_many :items, dependent: :destroy
+  has_many :purchases, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   # 親モデルが削除された時、それに紐付ている子モデルも一緒に削除されるというオプション。
   has_one :card, dependent: :destroy
 end

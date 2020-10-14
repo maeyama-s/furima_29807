@@ -20,6 +20,16 @@ class ApplicationController < ActionController::Base
                                       ])
   end
 
+  # deviseでのログイン後に遷移するパス設定
+  def after_sign_in_path_for(_resource)
+    root_path
+  end
+
+  # deviseでのログアウト後に遷移するパス設定
+  def after_sign_out_path_for(_resource)
+    root_path
+  end
+
   def search_item
     @p = Item.ransack(params[:q])  # 検索オブジェクトを生成
   end

@@ -1,7 +1,7 @@
 .users-show {
   background-image: image-url('bags.jpg');
   background-size: cover;
-  height: 750px;
+  height: 900px;
   display: flex;
   align-items: center;
   margin: 0 50px 50px 50px;
@@ -42,4 +42,13 @@
 
 .user-show-errors {
   color: red;
+}
+
+.user-edit-title {
+  font-size: 25px;
+  margin: 100px 0 20px 0;
+}
+
+input {
+  padding: 0 10px;
 }
