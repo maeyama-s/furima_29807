@@ -1,6 +1,18 @@
 /* 下部広告部分 */
 /* items/index.htmlの広告cssを所々使いまわしています。 */
 
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #3ccace;
+  padding: 8px;
+  background-image: image-url("search.png");
+  background-size: cover;
+}
+
+
 .ad-footer-contents {
   width: 100vw;
   background-image: image-url('furima-footer.png');
