@@ -115,15 +115,15 @@
 
   <div class="links">
     <div class="change-item-btn-front-p">
-      <%# Herokuように11にしている %>
-      <% if Item.find_by(id: @item.id + 11) %>
-        <%=link_to "＜ 前の商品", item_path(@item.id + 1), class:"change-item-btn-front" %>
+      <%# Herokuように10にしている %>
+      <% if Item.find_by(id: @item.id + 10) %>
+        <%=link_to "＜ 前の商品", item_path(@item.id + 10), class:"change-item-btn-front" %>
       <% end %>
     </div>
     <div class="change-item-btn-back-p">
-      <%# Herokuように11にしている %>
-      <% if Item.find_by(id: @item.id - 11) %>
-        <%=link_to "後ろの商品 ＞", item_path(@item.id - 1), class:"change-item-btn-back" %>
+      <%# Herokuように10にしている %>
+      <% if Item.find_by(id: @item.id - 10) %>
+        <%=link_to "後ろの商品 ＞", item_path(@item.id - 10), class:"change-item-btn-back" %>
       <% end %>
     </div>
   </div>
