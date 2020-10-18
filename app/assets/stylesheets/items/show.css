@@ -163,6 +163,7 @@
 
 .comment-box p {
   word-wrap: break-word; /* 折り返し */
+  margin: 5px 0;
 }
 
 .comment-text {
