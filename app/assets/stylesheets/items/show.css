@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .item-box-img {
@@ -152,6 +153,21 @@
 
 
 /* /商品の概要 */
+
+.sold-out-show {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: crimson;
+  transform: skewY(-10deg);
+}
+
+.sold-out-show>span {
+  color: #FFF;
+  font-size: 25px;
+  font: bold;
+}
 
 .comment-box {
   width: 40vw;

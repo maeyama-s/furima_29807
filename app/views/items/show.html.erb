@@ -12,7 +12,7 @@
       <% end %>
       <%# 商品が売れている場合は、sold outを表示しましょう %>
       <% if Purchase.find_by(item_id: @item.id) %>
-        <div class='sold-out'>
+        <div class='sold-out-show'>
           <span>Sold Out!!</span>
         </div>
       <% end %>
