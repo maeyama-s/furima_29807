@@ -1,109 +1,67 @@
-# README
+# アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Furima
 
-Things you may want to cover:
+# アプリケーション概要
 
-* Ruby version
+フリーマーケットのアプリケーションです。
 
-* System dependencies
+ユーザーを登録すると商品を出品できるようになります。
 
-* Configuration
+自身が出品した商品は、編集と削除をすることができます。
 
-* Database creation
-#テーブル設計
+他のユーザーが出品した商品は、クレジットカードを用いて購入することができます。
 
-## users テーブル
 
-| Column                | Type    | Options     |
-| --------------------- | ------- | ----------- |
-| id                    | integer | primary key |
-| nickname              | string  | null: false |
-| email                 | string  | primary key |
-| encrypted_password    | string  | null: false |
-| family_name           | string  | null: false |
-| first_name            | string  | null: false |
-| family_name_katakana  | string  | null: false |
-| first_name_katakana   | string  | null: false |
-| birthday              | date    | null: false |
+# URL
 
-### Association
+    https://furima-29807.herokuapp.com/
 
-- has_many :items
-- has_many :comments
-- has_many :purchases
+# テスト用アカウント
 
-## items テーブル
+アクセスすると、ユーザー名とパスワードの入力を求めるポップアップウィンドウが表示されるので以下の通り入力してください。（Basic認証）
 
-| Column                 | Type       | Options           |
-| ---------------------- | ---------- | ----------------- |
-| id                     | integer    | primary key       |
-| user                   | references | foreign_key: true |
-| title                  | string     | null: false       |
-| explanation            | text       | null: false       |
-| price                  | integer    | null: false       |
-| item_condition_id      | integer    | null: false       |
-| shipping_charges_id    | integer    | null: false       |
-| shipping_area_id       | integer    | null: false       |
-| days_until_shipping_id | integer    | null: false       |
-| category_id            | integer    | null: false       |
+    ・ユーザー名： maeyama
+    ・パスワード： 1258
 
-### Association
+テスト用アカウント
 
-- belongs_to :user
-- has_many :comments
-- has_one :purchase
+    出品者用
+      ・メールアドレス： taro@email
+      ・パスワード： yamada1234
 
-## comments テーブル
+    購入者用
+      ・メールアドレス： hanako@email
+      ・パスワード： tanaka1234
 
-| Column   | Type       | Options           |
-| -------- | ---------- | ----------------- |
-| id       | integer    | primary key       |
-| user     | references | foreign_key: true |
-| item     | references | foreign_key: true |
-| contents | text       | null: false       |
+    購入用カード情報
+      ・番号: 4242424242424242
+      ・セキュリティコード: 123
+      ・期限: 登録時より未来
 
-### Association
+# 利用方法
 
-- belongs_to :user
-- belongs_to :item
+ログインボタンをクリックし、遷移先のログインページにユーザー情報を入力しログインします。
 
-## purchases テーブル
+※アカウント削除機能もありますので、削除されてログインできない可能性があります。その場合は新規登録してください。入力内容は架空のものにしてください。
 
-| Column | Type       | Options           |
-| ------ | ---------- | ----------------- |
-| id     | integer    | primary key       |
-| user   | references | foreign_key: true |
-| item   | references | foreign_key: true |
+ログインすると、出品するボタンから出品することができます。
 
-### Association
-- belongs_to :user
-- belongs_to :item
-- has_one :shipping_address
+自身が出品した商品をクリックすると、詳細ページへ遷移します。
+編集をクリックし、商品情報を編集することができます。
+削除をクリックし、商品を削除することができます。
 
-## shipping_addresses テーブル
+他のユーザーが出品した商品をクリックし、詳細ページへ遷移します。購入をクリックし、情報を入力すると購入することができます。
 
-| Column         | Type       | Options           |
-| -------------- | ---------- | ----------------- |
-| id             | integer    | primary key       |
-| purchase       | references | foreign_key: true |
-| post_code      | string     | null: false       |
-| prefectures_id | integer    | null: false       |
-| city           | string     | null: false       |
-| adress         | string     | null: false       |
-| building_name  | string     |                   |
-| phone_number   | string     | null: false       |
+ヘッダーの入力フォームにキーワードを入力し検索アイコンをクリックすると、キーワードが含まれる商品名の商品一覧が表示されます。
 
-### Association
-- belongs_to :purchase
+ヘッダーの価格・カデゴリーの条件を指定し検索ボタンをクリックすると、条件に当てはまる商品一覧が表示されます。
 
-* Database initialization
+商品をクリックし詳細ページへ遷移した後、お気に入りアイコンをクリックするとその商品をお気に入り登録・解除ができます。
+ヘッダーのお気に入り一覧をクリックすると、お気に入り登録した商品一覧が表示されます。
 
-* How to run the test suite
+商品をクリックし詳細ページへ遷移した後、コメント入力フォームにコメントを入力し送信ボタンを押すと非同期でコメントを投稿することができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+ヘッダーのユーザーのニックネームをクリックすると、ニックネーム・Eメールアドレスの変更及び、アカウント削除ができます。
 
-* Deployment instructions
-
-* ...
+ヘッダーのログアウトをクリックすると、ログアウトできます。
